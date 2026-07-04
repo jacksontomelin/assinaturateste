@@ -12,5 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt gunicorn
 COPY app ./app
 COPY gunicorn.conf.py .
 
-# A porta vem de $PORT (lida em Python no gunicorn.conf.py), sem depender de shell.
 CMD ["gunicorn", "app.main:app", "-c", "gunicorn.conf.py"]
